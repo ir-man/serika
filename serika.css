@@ -1,0 +1,94 @@
+* {
+	margin: 0;
+	padding: 0;
+	background: whitesmoke;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+section	{
+	width: 100%;
+	max-height: 100vh;
+	display: flex;
+	justify-content: center;
+	transform: translateY(20%);
+}
+
+/*-------------------------------------*/
+
+svg {
+	width: 900px;
+	height: 500px;
+}
+#eyes {
+  animation: eyes 3.5s ease infinite ;
+  animation-delay: -1s ;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+#eyebrow {
+  animation: eyebrow 3.5s ease infinite ;
+  animation-delay: -1s ;
+}
+#press {
+  transition: 1s;
+  cursor: pointer;
+  transform-origin: center;
+  transform-box: fill-box;
+  transform: scaleY(2.0);
+}
+#press.active {
+  transform: rotateX(50deg) translateY(2px) scaleY(2.0);
+}
+#baling , #Lhair , #Rhair, #Uhair {
+  transform-origin: center;
+  transform-box: fill-box;
+}
+#baling.active {
+ animation: baling 0.5s linear infinite ;
+}
+#Lhair.active {
+ animation: Lhair 5s ease-in-out infinite ;
+  animation-delay: 0.3s;
+}
+#Rhair.active {
+ animation: Rhair 5s ease-in-out infinite ;
+}
+#Uhair.active {
+ animation: Uhair 5s ease-in-out infinite ;
+ animation-delay: 0.5s;
+}
+
+
+
+/*--------------------------------------*/
+
+@keyframes eyes {
+  0%{transform: scaleY(1) }
+  80%{transform: scaleY(1) }
+  85%{transform: scaleY(0.1)  translateY(3px) skewY(10deg)}
+  100%{transform: scaleY(1) }
+}
+@keyframes eyebrow {
+  0%{transform: translateY(0px) }
+  80%{transform:  translateY(0px) }
+  85%{transform: translateY(2px) skewY(0deg)}
+  100%{transform: translateY(0px) }
+}
+@keyframes baling {
+  0%{transform: rotateZ(0deg) }
+  100%{transform: rotateZ(90deg) }
+}
+@keyframes Lhair {
+  0%{transform: rotateZ(0deg) }
+  40%{transform: rotateZ(30deg) translateX(-5px) translateY(-5px) rotateX(40deg); }
+  100%{transform: rotateZ(0deg) }
+}
+@keyframes Rhair {
+  0%{transform: rotateZ(0deg) }
+  40%{transform: rotateZ(30deg) translateX(-10px) translateY(0) rotateX(30deg);  }
+  100%{transform: rotateZ(0deg) }
+}
+@keyframes Uhair {
+  0%{transform: rotateZ(0deg) }
+  40%{transform: rotateX(15deg) rotateZ(-10deg) translateY(2px) translateX(-2px);  }
+  100%{transform: rotateZ(0deg) }
+}
